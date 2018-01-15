@@ -37,5 +37,19 @@
             </li>
         </ul>
 
+        <ul ng-repeat="module in main.accessMenuList" side-navigation class="nav metismenu" id="side-menu1">
+            <li ng-class="navClass('{{module.url}}')">
+                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{module.name | translate}}</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-repeat="menu in module.childrenNodeList">
+                    <li ng-class="navClass('{{menu.url}}')">
+                        <a ng-click="main.navigate(menu.name, menu.status)">
+                            <i class="{{menu.icon}}"></i>
+                            <span class="nav-label">{{menu.name | translate}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
     </div>
 </nav>

@@ -34,7 +34,7 @@
         vm.navigate = navigate;
         vm.changeTheme = changeTheme;
         vm.theme = "default";
-
+        getUserAccessMenuList();
         function changeTheme(theme) {
             vm.theme = theme;
         }
@@ -50,6 +50,17 @@
                 console.log(error);
                 $window.location.reload();
             });
+        }
+
+        function getUserAccessMenuList() {
+            authorizationService.getUserAccessMenuList().then(
+                function (data) {
+                    vm.accessMenuList = data;
+                },
+                function (error) {
+                    console.log("error in getUserAccessMenuList");
+                }
+            );
         }
     };
 
