@@ -9,9 +9,18 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <a href="">
-                    <i class="fa fa-sign-out"></i> Log out
+            <li uib-dropdown>
+                <a class="count-info" href uib-dropdown-toggle>
+                    <i class="fa fa-cog" ></i>  {{ 'home.theme' | translate }}
+                </a>
+                <ul uib-dropdown-menu class="animated fadeInRight m-t-xs" ng-controller="translateCtrl">
+                    <li><a ng-click="main.changeTheme('default')">{{ 'home.theme.default' | translate }}</a></li>
+                    <li><a ng-click="main.changeTheme('colourful')">{{ 'home.theme.dark' | translate }}</a></li>
+                </ul>
+            </li>
+            <li ng:controller="loginCtrl">
+                <a href="" ng-click="logout()">
+                    <i class="fa fa-sign-out aaa" ></i> {{"home.logOut" | translate}}
                 </a>
             </li>
         </ul>

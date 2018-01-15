@@ -9,7 +9,7 @@
      *
      * Pass all functions into module
      */
-    angular.module('inspinia')
+    angular.module('frontend')
         .directive('pageTitle', pageTitle)
         .directive('sideNavigation', sideNavigation)
         .directive('iboxTools', iboxTools)

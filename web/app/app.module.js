@@ -3,10 +3,12 @@
  *
  */
 (function () {
-    angular.module('inspinia', [
+    angular.module('frontend', [
         'ui.router',                    // Routing
         'oc.lazyLoad',                  // ocLazyLoad
         'ui.bootstrap',                 // Ui Bootstrap
+        'app.common',
+        'pascalprecht.translate'
     ])
 })();
 

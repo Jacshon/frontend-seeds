@@ -8,10 +8,11 @@
  */
 
 (function () {
-    angular.module('inspinia').config(config)
+    angular.module('frontend').config(config)
         .run(run);
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
     function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+        setURLs();
         $urlRouterProvider.otherwise("/index/main");
 
         $ocLazyLoadProvider.config({
@@ -34,6 +35,14 @@
                 templateUrl: "app/minor/minor.html",
                 data: { pageTitle: 'Example view' }
             })
+        function setURLs() {
+            urls = {
+                login: WEBURLs.createUrl('api/web/login'),
+                logout: WEBURLs.createUrl('api/web/logout'),
+                changeLocale: WEBURLs.createUrl('api/web/common/changeLocale')
+            };
+            WEBURLs.setURLS('app', urls);
+        }
     }
     run.$inject = ['$rootScope','$state']
     function run($rootScope, $state) {
