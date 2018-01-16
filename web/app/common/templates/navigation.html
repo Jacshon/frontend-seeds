@@ -29,9 +29,28 @@
                 <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
             </li>
 
+            <li>
+                <a href=""><i class="fa fa-fire"></i> <span class="nav-label">Admin Managerment</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li ng-class="{active: $state.includes('user.userList')}">
+                        <a ng-click="main.navigate('app.user', 'user.userList')">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="nav-label">User Page</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li ng-class="{active: $state.includes('role.roleList')}">
+                        <a ng-click="main.navigate('app.role', 'role.roleList')">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">Role Page</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li ng-class="{active: $state.includes('user.userList')}">
                 <a ng-click="main.navigate('app.user', 'user.userList')">
-                    <i class="fa fa-list-alt"></i>
+                    <i class="fa fa-apple"></i>
                     <span class="nav-label">User Page</span>
                 </a>
             </li>

@@ -1,1 +1,15 @@
-{}
+{
+  "title.prefix":"Frontend",
+
+  "common.action":"Action",
+
+  "page.user.suffix":"User List",
+  "page.role.suffix":"Role List",
+  "page.privilege.suffix":"Privilege List",
+
+  "user.uesrId": "ID",
+  "user.loginName":"Login Name",
+  "user.realName":"Real Name",
+  "user.email":"Email"
+
+}

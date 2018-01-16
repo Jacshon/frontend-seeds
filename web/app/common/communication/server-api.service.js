@@ -11,7 +11,7 @@
 
         function postData(url, data) {
             var deferred = $q.defer();
-            return $http.post(url, data)
+            return $http.post(url,data)
                 .then(function(response) {
                     if (response.data.status == "ERROR") {
                         deferred.reject(response);

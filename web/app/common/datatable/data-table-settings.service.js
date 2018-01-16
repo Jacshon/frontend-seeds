@@ -91,7 +91,7 @@
 
         function onDataRetrivalError() {
             console.log('onDataRetrivalError');
-            //$window.location.reload();
+            $window.location.reload();
         }
 
         function getTaggedContent(data, type, full, meta) {

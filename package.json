@@ -1,12 +1,12 @@
 {
-  "name": "icmdb-backend-client",
+  "name": "frontend-seeds",
   "version": "1.0.0",
-  "description": "icmdb-backend-client description",
+  "description": "frontend-seeds description",
   "main": "index.html",
   "scripts": {
     "test": "testCommand"
   },
-  "author": "janaka",
+  "author": "weijiang",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.1",

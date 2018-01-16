@@ -9,5 +9,6 @@
         'oc.lazyLoad', // ocLazyLoad
         'ui.bootstrap', // Ui Bootstrap,
         'pascalprecht.translate',
+        'http-auth-interceptor'
     ])
 })();

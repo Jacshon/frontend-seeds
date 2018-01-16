@@ -9,8 +9,8 @@
 (function () {
     angular.module('frontend').controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$ocLazyLoad', '$state', '$window', 'applicationSettings', 'translationService'];
-    function MainCtrl($ocLazyLoad, $state, $window, applicationSettings, translationService) {
+    MainCtrl.$inject = ['$rootScope', '$ocLazyLoad', '$state', '$window', 'applicationSettings', 'translationService'];
+    function MainCtrl($rootScope, $ocLazyLoad, $state, $window, applicationSettings, translationService) {
         var vm = this;
 
         var defaultLanguage = window.localStorage.lang || 'en_US';
@@ -34,7 +34,7 @@
         vm.navigate = navigate;
         vm.changeTheme = changeTheme;
         vm.theme = "default";
-        getUserAccessMenuList();
+        // getUserAccessMenuList();
         function changeTheme(theme) {
             vm.theme = theme;
         }

@@ -10,8 +10,8 @@
 (function () {
     angular.module('frontend').config(config)
         .run(run);
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
-    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$translateProvider'];
+    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $translateProvider) {
         setURLs();
         $urlRouterProvider.otherwise("/index/main");
 
@@ -25,16 +25,25 @@
             url: "/index",
             templateUrl: "app/common/templates/content.html",
         })
-            .state('index.main', {
-                url: "/main",
-                templateUrl: "app/main/main.html",
-                data: { pageTitle: 'Example view' }
-            })
-            .state('index.minor', {
-                url: "/minor",
-                templateUrl: "app/minor/minor.html",
-                data: { pageTitle: 'Example view' }
-            })
+        .state('index.main', {
+            url: "/main",
+            templateUrl: "app/main/main.html",
+            data: { pageTitle: 'Example view' }
+        })
+        .state('index.minor', {
+            url: "/minor",
+            templateUrl: "app/minor/minor.html",
+            data: { pageTitle: 'Example view' }
+        });
+
+        var defaultLanguage = window.localStorage.lang || 'en_US';
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'languages/',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage(defaultLanguage);
+        $translateProvider.fallbackLanguage(defaultLanguage);
+
         function setURLs() {
             urls = {
                 login: WEBURLs.createUrl('api/web/login'),

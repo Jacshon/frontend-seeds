@@ -1,1 +1,14 @@
-{}
+{
+  "title.suffix":"后台管理系统",
+
+  "common.action":"操作",
+
+  "page.user.suffix":"用户列表",
+  "page.role.suffix":"角色列表",
+  "page.privilege.suffix":"权限列表",
+
+  "user.uesrId": "ID",
+  "user.loginName":"登录名",
+  "user.realName":"真实姓名",
+  "user.email":"邮箱地址"
+}
