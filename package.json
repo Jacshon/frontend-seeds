@@ -1,0 +1,21 @@
+{
+  "name": "icmdb-backend-client",
+  "version": "1.0.0",
+  "description": "icmdb-backend-client description",
+  "main": "index.html",
+  "scripts": {
+    "test": "testCommand"
+  },
+  "author": "janaka",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-debug-task": "^0.1.8",
+    "grunt-node-inspector": "^0.4.2",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-usemin": "^3.1.1"
+  }
+}
