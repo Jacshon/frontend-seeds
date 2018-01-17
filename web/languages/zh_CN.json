@@ -7,6 +7,7 @@
   "page.role.suffix":"角色列表",
   "page.privilege.suffix":"权限列表",
 
+  "user.title":"用户信息",
   "user.uesrId": "ID",
   "user.loginName":"登录名",
   "user.realName":"真实姓名",

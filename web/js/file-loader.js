@@ -11,6 +11,14 @@ var FileLoader = (function() {
                 'app/user/user.service.js',
                 'app/user/user.ctrl.js'
             ];
+        },
+        'app.role':function () {
+            return [
+                'app/role/role.module.js',
+                'app/role/role.config.js',
+                'app/role/role.service.js',
+                'app/role/role.ctrl.js'
+            ]
         }
     };
 
