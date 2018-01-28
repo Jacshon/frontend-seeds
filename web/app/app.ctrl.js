@@ -38,36 +38,6 @@
         function changeTheme(theme) {
             vm.theme = theme;
         }
-
-        vm.menuList = [
-            {
-                "state":"user.userList",
-                "icon":"fa fa-bank",
-                "name":"用户管理",
-                "code":"app.user",
-                "module":"user"
-            },
-            {
-                "state":"role.roleList",
-                "icon":"fa fa-list-alt",
-                "name":"角色管理",
-                "code":"app.role",
-                "module":"role"
-            },
-            {
-                "state":"privilege.privilegeList",
-                "icon":"fa fa-desktop",
-                "name":"app.privilege",
-                "code":"sys.privilege"
-            },
-            {
-                "state":"operate.operateList",
-                "icon":"fa fa-laptop",
-                "name":"app.operate",
-                "code":"sys.operate"
-            }
-        ];
-
         vm.accessMenuList = [
             {
                 "code":"dupLevel",

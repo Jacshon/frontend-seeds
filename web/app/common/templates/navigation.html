@@ -35,10 +35,10 @@
         <!-- 展示二级菜单结构,同一模块下的菜单具有相同的模块码值，模块码值与需要与该模块下的公共state值保持一致 -->
         <ul ng-repeat="module in main.accessMenuList" side-navigation class="nav metismenu" id="side-menu3">
             <li ng-class="{active: $state.includes(module.code)}">
-                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{module.name}}</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes(module.code)}" ng-repeat="menu in module.menuList">
-                    <li ng-class="{active: $state.includes(menu.code)}">
-                        <a ng-click="main.navigate(menu.name, menu.state)">
+                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{module.name|translate}}</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-repeat="menu in module.menuList">
+                    <li ng-class="{active: $state.includes(menu.state)}">
+                        <a ng-click="main.navigate(module.name, menu.state)">
                             <i class="{{menu.icon}}"></i>
                             <span class="nav-label">{{menu.name}}</span>
                         </a>
