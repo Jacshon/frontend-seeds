@@ -19,6 +19,14 @@ var FileLoader = (function() {
                 'app/role/role.service.js',
                 'app/role/role.ctrl.js'
             ]
+        },
+        'app.dupLevel': function () {
+            return [
+                'app/dupLevel/dupLevel.module.js',
+                'app/dupLevel/dupLevel.config.js',
+                'app/dupLevel/dupLevel.service.js',
+                'app/dupLevel/dupLevel.ctrl.js'
+            ]
         }
     };
 

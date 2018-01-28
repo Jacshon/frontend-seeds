@@ -1,6 +1,6 @@
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
-        <ul side-navigation class="nav metismenu" id="side-menu">
+        <ul side-navigation class="nav metismenu" id="side-menu1">
             <li class="nav-header">
 
                 <div class="profile-element" uib-dropdown>
@@ -21,43 +21,26 @@
                 </div>
 
             </li>
-
-            <li ui-sref-active="active">
-                <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
-            </li>
-            <li ui-sref-active="active">
-                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
-            </li>
-
-            <li ng-class="{active: $state.includes('user')}">
-                <a href=""><i class="fa fa-fire"></i> <span class="nav-label">Admin Managerment</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li ng-class="{active: $state.includes('user.userList')}">
-                        <a ng-click="main.navigate('app.user', 'user.userList')">
-                            <i class="fa fa-list-alt"></i>
-                            <span class="nav-label">User Page</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-second-level collapse">
-                    <li ng-class="{active: $state.includes('role.roleList')}">
-                        <a ng-click="main.navigate('app.role', 'role.roleList')">
-                            <i class="fa fa-bank"></i>
-                            <span class="nav-label">Role Page</span>
-                        </a>
-                    </li>
-                </ul>
+        </ul>
+        <!-- 展示一级菜单结构，需要模块判断是否是当前活动模块，需要code加载对应模块，利用state进行跳转，展示icon，及显示的菜单名称name -->
+        <ul side-navigation class="nav metismenu" id="side-menu" ng-repeat="menu in main.menuList">
+            <li ng-class="{active: $state.includes(menu.module)}">
+                <a ng-click="main.navigate(menu.code, menu.state)">
+                    <i class="{{menu.icon}}"></i>
+                    <span class="nav-label">{{menu.name}}</span>
+                </a>
             </li>
         </ul>
 
-        <ul ng-repeat="module in main.accessMenuList" side-navigation class="nav metismenu" id="side-menu1">
-            <li ng-class="navClass('{{module.url}}')">
-                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{module.name | translate}}</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse" ng-repeat="menu in module.childrenNodeList">
-                    <li ng-class="navClass('{{menu.url}}')">
-                        <a ng-click="main.navigate(menu.name, menu.status)">
+        <!-- 展示二级菜单结构,同一模块下的菜单具有相同的模块码值，模块码值与需要与该模块下的公共state值保持一致 -->
+        <ul ng-repeat="module in main.accessMenuList" side-navigation class="nav metismenu" id="side-menu3">
+            <li ng-class="{active: $state.includes(module.code)}">
+                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{module.name}}</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes(module.code)}" ng-repeat="menu in module.menuList">
+                    <li ng-class="{active: $state.includes(menu.code)}">
+                        <a ng-click="main.navigate(menu.name, menu.state)">
                             <i class="{{menu.icon}}"></i>
-                            <span class="nav-label">{{menu.name | translate}}</span>
+                            <span class="nav-label">{{menu.name}}</span>
                         </a>
                     </li>
                 </ul>

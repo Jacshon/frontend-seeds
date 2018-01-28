@@ -1,10 +1,8 @@
 /**
- * Created by weijiang
- * data : 2018/1/16.
- * version :v1.0.0
+ * Created by Administrator on 2018/1/28.
  */
 (function () {
-    angular.module('app.role').config(configure)
+    angular.module('app.dupLevel').config(configure)
         .run(run);
 
     configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
@@ -13,17 +11,25 @@
         $ocLazyLoadProvider.config({
             debug: false
         });
-        $stateProvider.state('role', {
-            url: "/role",
+        $stateProvider.state('dupLevel', {
+            url: "/dupLevel",
             templateUrl: "app/common/templates/content.html",
             data: {
                 pageTitle: 'Role'
             }
-        }).state('role.roleList', {
-            url: "/roleList",
+        }).state('dupLevel.dupLevel1', {
+            url: "/dupLevel1",
             templateUrl: "app/role/role.html",
             data: {
                 pageTitle: 'Role List'
+            },resolve: {
+                loadDependancies: loadDependancies
+            }
+        }).state('dupLevel.dupLevel2',{
+            url:"/dupLevel2",
+            templateUrl:"app/user/user.html",
+            data: {
+                pageTitle: "User List"
             },resolve: {
                 loadDependancies: loadDependancies
             }
@@ -36,7 +42,7 @@
                 getUserDetails:WEBURLs.createUrl('api/web/role/getRoleDetail/{id}'),
                 deleteUser:WEBURLs.createUrl('api/web/role/deleteRole/{id}')
             }
-            WEBURLs.setURLS('app.role',urls);
+            WEBURLs.setURLS('app.dupLevel',urls);
         }
     }
 
