@@ -1,8 +1,3 @@
-/**
- * Created by weijiang
- * data : 2018/1/15.
- * version :v1.0.0
- */
 (function() {
     angular.module('app.common').service('loginService', loginService);
 
@@ -17,7 +12,7 @@
         function login(loginId, password) {
             var postRequest = {
                 method: 'POST',
-                url: WEBURLs.getURLS('app').login,
+                url: InspiniaURLs.getURLS('app').login,
                 data: {
                     "loginId": loginId,
                     "password": password
@@ -40,7 +35,7 @@
         function logout() {
             var postRequest = {
                 method: 'POST',
-                url: WEBURLs.getURLS('app').logout,
+                url: InspiniaURLs.getURLS('app').logout,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },

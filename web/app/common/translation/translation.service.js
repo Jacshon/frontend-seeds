@@ -7,7 +7,7 @@
         this.changeLocale = changeLocale;
 
         function changeLocale(language) {
-            return serverAPI.getData(WEBURLs.getURLS('app').changeLocale, {
+            return serverAPI.getData(InspiniaURLs.getURLS('app').changeLocale, {
                 'language': language
             });
         }

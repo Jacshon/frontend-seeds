@@ -1,32 +1,37 @@
-var FileLoader = (function() {
-    this.dependancies = {
-
-    };
+var InspiniaFileLoader = (function() {
 
     this.fileMapping = {
-        'app.user': function() {
-            return [
-                'app/user/user.module.js',
-                'app/user/user.config.js',
-                'app/user/user.service.js',
-                'app/user/user.ctrl.js'
-            ];
+        'app.dashboard_1':function(){
+            return[
+                'app/dashboard_1/dashboard_1.module.js',
+                'app/dashboard_1/dashboard_1.ctrl.js',
+                'app/dashboard_1/dashboard_1.service.js',
+                'app/dashboard_1/dashboard_1.config.js'
+            ]
         },
-        'app.role':function () {
+        'app.user':function(){
+            return [
+                'app/user/user.module.js'
+                ,'app/user/user.ctrl.js'
+                ,'app/user/user.service.js'
+                ,'app/user/user.config.js'
+            ]
+        },
+        'app.role': function() {
             return [
                 'app/role/role.module.js',
                 'app/role/role.config.js',
                 'app/role/role.service.js',
                 'app/role/role.ctrl.js'
-            ]
+            ];
         },
-        'app.dupLevel': function () {
+        'app.menu': function() {
             return [
-                'app/dupLevel/dupLevel.module.js',
-                'app/dupLevel/dupLevel.config.js',
-                'app/dupLevel/dupLevel.service.js',
-                'app/dupLevel/dupLevel.ctrl.js'
-            ]
+                'app/menu/menu.module.js',
+                'app/menu/menu.config.js',
+                'app/menu/menu.service.js',
+                'app/menu/menu.ctrl.js'
+            ];
         }
     };
 
@@ -39,12 +44,6 @@ var FileLoader = (function() {
             files = ['app/' + folderName + '/' + folderName + '.concat.js'];
         } else {
             files = fileMapping[moduleName]();
-        }
-        var dependancyArray = dependancies[moduleName];
-        if (dependancyArray) {
-            for (var i = 0; i < dependancyArray.length; i++) {
-                files = files.concat(getFiles(dependancyArray[i]));
-            }
         }
         return files;
     }

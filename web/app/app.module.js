@@ -3,12 +3,11 @@
  *
  */
 (function () {
-    angular.module('frontend', [
+    angular.module('inspinia', [
         'ui.router',                    // Routing
         'oc.lazyLoad',                  // ocLazyLoad
         'ui.bootstrap',                 // Ui Bootstrap
-        'app.common',
-        'pascalprecht.translate'
+        'app.common'
     ])
 })();
 

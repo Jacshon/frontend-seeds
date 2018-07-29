@@ -6,13 +6,16 @@
  * Initial there are written state for all view in theme.
  *
  */
-
 (function () {
-    angular.module('frontend').config(config)
-        .run(run);
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$translateProvider'];
-    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $translateProvider) {
-        setURLs();
+    angular
+        .module('inspinia')
+        .config(config)
+        .run(function ($rootScope, $state) {
+            $rootScope.$state = $state;
+        })
+
+    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+        setURLS();
         $urlRouterProvider.otherwise("/index/main");
 
         $ocLazyLoadProvider.config({
@@ -20,43 +23,42 @@
             debug: false
         });
 
-        $stateProvider.state('index', {
-            abstract: true,
-            url: "/index",
-            templateUrl: "app/common/templates/content.html",
-        })
-        .state('index.main', {
-            url: "/main",
-            templateUrl: "app/main/main.html",
-            data: { pageTitle: 'Example view' }
-        })
-        .state('index.minor', {
-            url: "/minor",
-            templateUrl: "app/minor/minor.html",
-            data: { pageTitle: 'Example view' }
-        });
+        $stateProvider
 
-        var defaultLanguage = window.localStorage.lang || 'en_US';
-        $translateProvider.useStaticFilesLoader({
-            prefix: 'languages/',
-            suffix: '.json'
-        });
-        $translateProvider.preferredLanguage(defaultLanguage);
-        $translateProvider.fallbackLanguage(defaultLanguage);
+            .state('index', {
+                abstract: true,
+                url: "/index",
+                templateUrl: "app/common/templates/content.html",
+            })
+            .state('index.main', {
+                url: "/main",
+                templateUrl: "app/main/main.html",
+                data: {pageTitle: 'Example view'}
+            })
+            .state('index.minor', {
+                url: "/minor",
+                templateUrl: "app/minor/minor.html",
+                data: {pageTitle: 'Example view'}
+            })
+            .state('index.role', {
+                url: "/role",
+                templateUrl: "app/role/role.html",
+                data: {pageTitle: 'Example Role'}
+            })
+            .state('index.privilege', {
+                url: "/privilege",
+                templateUrl: "app/privilege/privilege.html",
+                data: {pageTitle: 'Example Privilege'}
+            })
 
-        function setURLs() {
+        function setURLS() {
             urls = {
-                login: WEBURLs.createUrl('api/web/login'),
-                logout: WEBURLs.createUrl('api/web/logout'),
-                changeLocale: WEBURLs.createUrl('api/web/common/changeLocale')
+                login: InspiniaURLs.createUrl('api/web/login'),
+                logout: InspiniaURLs.createUrl('api/web/logout'),
+                changeLocale: InspiniaURLs.createUrl('api/web/common/changeLocale'),
             };
-            WEBURLs.setURLS('app', urls);
+            InspiniaURLs.setURLS('app', urls);
         }
     }
-    run.$inject = ['$rootScope','$state']
-    function run($rootScope, $state) {
-       $rootScope.$state = $state;
-    }
-
 })();
 

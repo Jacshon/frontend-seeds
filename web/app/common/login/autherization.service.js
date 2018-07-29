@@ -1,8 +1,3 @@
-/**
- * Created by weijiang
- * data : 2018/1/15.
- * version :v1.0.0
- */
 (function() {
     angular.module('app.common').service('authorizationService', authorizationService);
 
@@ -13,11 +8,9 @@
         vm.isAutherized = isAutherized;
         vm.userAccessList = null;
         getUserAccessList();
-        
-        vm.getUserDetails = getUserDetails;
 
         function getUserAccessList() {
-            serverAPI.getCashedData(WEBURLs.getURLS('app.common').getUserAccessList, {}).then(function(response) {
+            serverAPI.getCashedData(InspiniaURLs.getURLS('app.common').getUserAccessList, {}).then(function(response) {
                 vm.userAccessList = response;
             }, function(response) {
                 console.log("error in getUserAccessList");
@@ -45,10 +38,6 @@
         function isMatching(value, str) {
             var match = value.match(str.replace("*", ".*"));
             return match !== null;
-        }
-        
-        function getUserDetails(){
-        	return serverAPI.getCashedData(WEBURLs.getURLS('app.common').getUserDetails, {});
         }
     }
 

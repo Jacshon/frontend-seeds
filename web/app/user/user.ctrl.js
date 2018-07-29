@@ -1,36 +1,45 @@
-/**
- * Created by weijiang
- * data : 2018/1/11.
- * version :v1.0.0
- */
 (function () {
-    angular.module('app.user').controller('UserController',UserController)
-    UserController.$inject = ['$scope', 'DTOptionsBuilder', 'DTColumnBuilder', 'DataTableSettings','userService'];
-
-    function UserController($scope, DTOptionsBuilder, DTColumnBuilder, DataTableSettings, userService) {
+    angular.module('app.user').controller('UserController', UserController);
+    
+    UserController.$inject = ['$scope', 'DTOptionsBuilder', 'DTColumnBuilder', 'DataTableSettings', '$uibModal', '$filter'];
+    
+    function UserController($scope, DTOptionsBuilder, DTColumnBuilder, DataTableSettings, $uibModal, $filter) {
         var vm = this;
+        vm.openUserDetailsPopup = openUserDetailsPopup;
         vm.tableDTOptions = DataTableSettings.buildDefaultTable(DTOptionsBuilder)
             .withOption('initComplete', onTableCreationCompleted)
-            .withOption('sDom', '<"top"><"html5buttons"B>rt<"information"i><"bottom"lp>')
+            .withOption('sDom', '<"top"><"html5buttons"B>rt<"information"i><"bottom"lp>')//sDom选项灵活配置各个特性的位置
+            .withButtons([])
             .withOption('ajax', {
-                url: WEBURLs.getURLS('app.user').searchUserList,
+                url: 'app/user/user.json',
                 type: 'POST',
                 error: DataTableSettings.onDataRetrivalError
-            }).withButtons([])
-            .withOption('columnDefs', [ {
-                "targets": [4],
+            })
+            .withOption('columnDefs', [{
+                "targets": 7,
                 "render": getActionColumnContent
-            }]).withOption("order", [0, 'desc']);
+            }])
+            .withOption("order", [0, 'desc']);
 
         vm.tableDTColumns = [
-            DTColumnBuilder.newColumn('userId'),
-            DTColumnBuilder.newColumn('loginId'),
-            DTColumnBuilder.newColumn('realName'),
-            DTColumnBuilder.newColumn('email'),
+            DTColumnBuilder.newColumn('testId'),
+            DTColumnBuilder.newColumn('name').withOption("name", "name"),
+            DTColumnBuilder.newColumn('gender').withOption("name", "gender"),
+            DTColumnBuilder.newColumn('icType').withOption("name", "icType").notSortable(),
+            DTColumnBuilder.newColumn('icNumber').withOption("name", "icNumber").notSortable(),
+            DTColumnBuilder.newColumn('birthDay').withOption("name", "birthDay").notSortable(),
+            DTColumnBuilder.newColumn('mobileNumber').withOption("name", "mobileNumber").notSortable(),
             DTColumnBuilder.newColumn('action').notSortable()
         ];
 
         vm.tableDTInstance = {};
+
+        function onTableCreationCompleted() {
+            DataTableSettings.configureColumnSearch($scope, vm.tableDTInstance.DataTable);
+            configureColumnActions();
+        }
+
+        DataTableSettings.applyCustomSettings(vm, '#userTable');
 
         function getActionColumnContent(data, type, full, meta) {
             var content = "<a class='icon'> <i class='fa fa-eye'></i></a> &nbsp";
@@ -38,8 +47,119 @@
             return content;
         }
 
-        function onTableCreationCompleted(settings, json) {
+        function configureColumnActions() {
+            EventManager.addEvent($scope, 'click', clickView, $('#userTable tbody'), '.fa-eye');
+            EventManager.addEvent($scope, 'click', clickEdit, $('#userTable tbody'), '.fa-edit');
+
+            function clickEdit() {
+                var tr = $(this).closest('tr');
+                var row = vm.tableDTInstance.DataTable.row(tr);
+                vm.openUserDetailsPopup(Constants.getActions().EDIT,
+                    {"user":row.data()});
+                // userService.getUserDetails(row.data().userId).then(
+                //     function(data) {
+                //         vm.openUserDetailsPopup(Constants.getActions().EDIT,
+                //             {"user":data,
+                //                 "diseaseInfos":vm.diseaseInfos,
+                //                 "sysInstitution":vm.sysInstitution,
+                //                 "allDiseaseId":vm.allDiseaseId,
+                //                 "sysInstitutionAndUser":vm.searchSysInstitutionAndUser});
+                //     },
+                //     function(error) {
+                //     }
+                // );
+            }
+
+            function clickView() {
+                var tr = $(this).closest('tr');
+                var row = vm.tableDTInstance.DataTable.row(tr);
+                vm.openUserDetailsPopup(Constants.getActions().VIEW,
+                    {"user":row.data()});
+                // userService.getUserDetails(row.data().userId).then(
+                //     function(data) {
+                //         vm.openUserDetailsPopup(Constants.getActions().VIEW,
+                //             {"user":data,
+                //                 "diseaseInfos":vm.diseaseInfos,
+                //                 "sysInstitution":vm.sysInstitution,
+                //                 "allDiseaseId":vm.allDiseaseId,
+                //                 "sysInstitutionAndUser":vm.searchSysInstitutionAndUser});
+                //     },
+                //     function(error) {
+                //     }
+                // );
+            }
         }
 
+        function openUserDetailsPopup(action, data) {
+            if (data) {
+                openPopUp(action, data);
+            } else {
+                openPopUp(action, {});
+            }
+
+            function openPopUp(action, data) {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'app/user/user-details-popup.html',
+                    controller: UserDetailsPopupController,
+                    controllerAs: 'userDetailsPopupCtrl',
+                    resolve: {
+                        transferObject: function() {
+                            return new TransferObject(data, action, function(user) {
+                                vm.tableDTInstance.DataTable.ajax.reload();
+                            });
+                        }
+                    }
+                });
+            }
+        }
+        generateButtons(vm.tableDTOptions);
+
+        function generateButtons(tableDTOptions) {
+            var creteTest = "<span class='btn btn-primary' >"+$filter('translate')('test.list.title.add.test')+"</span>";
+            var buttons = [];
+            buttons = [{
+                text: creteTest,
+                key: '1',
+                action: onClickCreateUser
+            }];
+            tableDTOptions.withButtons(buttons);
+        }
+
+        function onClickCreateUser() {
+            openUserDetailsPopup(Constants.getActions().ADD, {});
+        }
+    }
+
+    angular.module('app.user')
+        .controller('UserDetailsPopupController', UserDetailsPopupController);
+    UserDetailsPopupController.$inject = ['$scope', '$uibModalInstance','transferObject'];
+    
+    function UserDetailsPopupController($scope, $uibModalInstance, transferObject) {
+        var vm = this;
+        vm.readOnly = (transferObject.action == Constants.getActions().VIEW);
+        vm.user = transferObject.data.user;
+        vm.cancel = cancel;
+        vm.saveUser = saveUser;
+
+        function cancel() {
+            $uibModalInstance.dismiss('cancel');
+        }
+
+        function ok() {
+            $uibModalInstance.close();
+        }
+
+        function saveUser(user) {
+            ok();
+            // userService.saveUser(user).then(
+            //     function(data) {
+            //         vm.ok();
+            //         transferObject.successCallback(user);
+            //     },
+            //     function(error) {
+            //         errorHandlerService.handleError(error, $scope.userForm, $scope);
+            //     }
+            // );
+        }
     }
 })();

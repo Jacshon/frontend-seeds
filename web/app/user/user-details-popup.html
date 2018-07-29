@@ -1,0 +1,52 @@
+<div class="inmodal">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>{{"user.details"| translate}}</h5>
+            <div ibox-tools on-close="userDetailsPopupCtrl.cancel()"></div>
+        </div>
+        <div class="ibox-content">
+            <form role="form" name="userForm" validate-on-server>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <div class="form-group">
+                            <label class="font-noraml">{{"user.loginName"| translate}}</label>
+                            <input type="text" name="testId"
+                                   class="form-control" data-ng-model="userDetailsPopupCtrl.user.testId"
+                                   ng-disabled="userDetailsPopupCtrl.readOnly">
+                        </div>
+                    </div>
+                    <div class='col-md-6'>
+                        <div class="form-group">
+                            <label class="font-noraml">{{"user.realName"| translate}}</label>
+                            <input type="text" name="name"
+                                   class="form-control" data-ng-model="userDetailsPopupCtrl.user.name"
+                                   ng-disabled="userDetailsPopupCtrl.readOnly">
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <div class="form-group">
+                            <label class="font-noraml">{{"user.email"| translate}}</label>
+                            <input type="text" name="gender"
+                                   class="form-control" data-ng-model="userDetailsPopupCtrl.user.gender"
+                                   ng-disabled="userDetailsPopupCtrl.readOnly">
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group'></div>
+            </form>
+            <div class="footer">
+                <button type="submit" class="btn btn-primary"
+                        ng-click="userDetailsPopupCtrl.saveUser(userDetailsPopupCtrl.user)"
+                        ng-show="!userDetailsPopupCtrl.readOnly">
+                    {{'common.save' | translate}}
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="userDetailsPopupCtrl.cancel()">{{'common.close'
+                    | translate}}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

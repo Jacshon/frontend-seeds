@@ -1,8 +1,3 @@
-/**
- * Created by weijiang
- * data : 2018/1/16.
- * version :v1.0.0
- */
 (function() {
     angular.module('app.common').service('DataTableSettings', DataTableSettings);
     DataTableSettings.$inject = ['$ocLazyLoad', 'serverAPI', '$q', 'applicationSettings'];
@@ -91,7 +86,7 @@
 
         function onDataRetrivalError() {
             console.log('onDataRetrivalError');
-            $window.location.reload();
+            //$window.location.reload();
         }
 
         function getTaggedContent(data, type, full, meta) {
@@ -200,7 +195,7 @@
                 var conversionServiceSettings = [];
                 var useConversionService = false;
                 for (i = 0; i < columns.length; i++) {
-                    converter = columns[i].icmdbConverter;
+                    converter = columns[i].converter;
                     if (converter) {
                         var converterSettings = {
                             'tableId': tableId,
@@ -239,7 +234,7 @@
                     }
                     request.conveters.push(converter);
                 }
-                serverAPI.postData(ICMDBURLs.getURLS('app.common').conversionService, request)
+                serverAPI.postData(InspiniaURLs.getURLS('app.common').conversionService, request)
                     .then(function(data) {
                         applyConversion(data, conversionServiceSettings);
                     }, function(error) {

@@ -1,8 +1,3 @@
-/**
- * Created by weijiang
- * data : 2018/1/15.
- * version :v1.0.0
- */
 (function() {
     angular.module('app.common').controller('loginCtrl', loginCtrl);
 

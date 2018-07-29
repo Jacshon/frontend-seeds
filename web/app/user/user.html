@@ -1,15 +1,15 @@
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>User List</h2>
+        <h2>User</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="../../frontend-seeds/web/index.html">Home</a>
+                <a href="index.html">Home</a>
             </li>
             <li>
-                <a>User</a>
+                <a>Sys</a>
             </li>
             <li class="active">
-                <strong>User List</strong>
+                <strong>User</strong>
             </li>
         </ol>
     </div>
@@ -17,34 +17,28 @@
 
     </div>
 </div>
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="UserController as userCtrl">
     <div class="row">
-        <div class="panel-body" ng-controller="UserController as userCtrl">
+        <div class="col-lg-12">
             <div class="ibox float-e-margins">
-                <div class="section-header">
-                    <h5>{{"user.title"| translate}}</h5>
-                </div>
                 <div class="ibox-content">
-                    <table
-                            id="userTable"
-                            datatable=""
-                            dt-options="userCtrl.tableDTOptions"
-                            style="width:100%"
-                            width="100%"
-                            dt-columns="userCtrl.tableDTColumns"
-                            dt-instance="userCtrl.tableDTInstance"
-                            class="table table-striped table-bordered table-hover dataTables-example responsive row-border hover">
+                    <table id="userTable" datatable="" dt-options="userCtrl.tableDTOptions"
+                           dt-columns="userCtrl.tableDTColumns"
+                           dt-instance="userCtrl.tableDTInstance"
+                           class="table table-striped table-bordered table-hover dataTables-example responsive row-border hover">
                         <thead>
                         <tr>
-                            <th>{{"user.uesrId"| translate}}</th>
-                            <th>{{"user.loginName"| translate}}</th>
-                            <th>{{"user.realName"| translate}}</th>
-                            <th>{{"user.email"| translate}}</th>
-                            <th>{{"common.action"| translate}}</th>
+                            <th style="width:50px;">ID</th>
+                            <th style="width:200px;">{{"patient.name"| translate}}</th>
+                            <th style="width:100px;">{{"patient.birthday"| translate}}</th>
+                            <th style="width:200px;">{{"patient.mrn"| translate}}</th>
+                            <th style="width:100px;">{{"patient.gender"| translate}}</th>
+                            <th style="width:150px;">{{"patient.idType"| translate}}</th>
+                            <th style="width:200px;">{{"patient.idNumber"| translate}}</th>
+                            <th style="width:100px;">{{"patient.action" | translate}}</th>
                         </tr>
                         </thead>
                     </table>
-
                 </div>
             </div>
         </div>
