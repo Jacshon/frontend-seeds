@@ -53,8 +53,8 @@
 
         function setURLS() {
             urls = {
-                login: InspiniaURLs.createUrl('api/web/login'),
-                logout: InspiniaURLs.createUrl('api/web/logout'),
+                login: InspiniaURLs.createUrl('api/web/common/login'),
+                logout: InspiniaURLs.createUrl('api/web/common/logout'),
                 changeLocale: InspiniaURLs.createUrl('api/web/common/changeLocale'),
             };
             InspiniaURLs.setURLS('app', urls);

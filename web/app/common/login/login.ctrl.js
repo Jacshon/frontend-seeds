@@ -4,8 +4,10 @@
     loginCtrl.$inject = ['$scope', '$http', 'authService', 'loginService', '$window'];
 
     function loginCtrl($scope, $http, authService, loginService, $window) {
-        $scope.login = function() {
-            loginService.login($scope.loginId, $scope.password)
+        var vm = this;
+        vm.user = {};
+        vm.login = function() {
+            loginService.login(vm.user.loginId, vm.user.password)
                 .then(
                     function(data) {
                         authService.loginConfirmed();
@@ -16,8 +18,8 @@
                     });
         };
 
-        $scope.logout = function() {
-            loginService.logout($scope.loginId, $scope.password)
+        vm.logout = function() {
+            loginService.logout(vm.user.loginId, vm.user.password)
                 .then(
                     function(data) {
                         $window.location.reload();

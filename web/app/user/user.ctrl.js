@@ -56,18 +56,6 @@
                 var row = vm.tableDTInstance.DataTable.row(tr);
                 vm.openUserDetailsPopup(Constants.getActions().EDIT,
                     {"user":row.data()});
-                // userService.getUserDetails(row.data().userId).then(
-                //     function(data) {
-                //         vm.openUserDetailsPopup(Constants.getActions().EDIT,
-                //             {"user":data,
-                //                 "diseaseInfos":vm.diseaseInfos,
-                //                 "sysInstitution":vm.sysInstitution,
-                //                 "allDiseaseId":vm.allDiseaseId,
-                //                 "sysInstitutionAndUser":vm.searchSysInstitutionAndUser});
-                //     },
-                //     function(error) {
-                //     }
-                // );
             }
 
             function clickView() {
@@ -75,18 +63,6 @@
                 var row = vm.tableDTInstance.DataTable.row(tr);
                 vm.openUserDetailsPopup(Constants.getActions().VIEW,
                     {"user":row.data()});
-                // userService.getUserDetails(row.data().userId).then(
-                //     function(data) {
-                //         vm.openUserDetailsPopup(Constants.getActions().VIEW,
-                //             {"user":data,
-                //                 "diseaseInfos":vm.diseaseInfos,
-                //                 "sysInstitution":vm.sysInstitution,
-                //                 "allDiseaseId":vm.allDiseaseId,
-                //                 "sysInstitutionAndUser":vm.searchSysInstitutionAndUser});
-                //     },
-                //     function(error) {
-                //     }
-                // );
             }
         }
 

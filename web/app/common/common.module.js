@@ -5,6 +5,7 @@
         'ui.bootstrap', // Ui Bootstrap,
         'pascalprecht.translate',
         'http-auth-interceptor',
-        'angular-cache'
+        'angular-cache',
+        'toaster'
     ]);
 })();
