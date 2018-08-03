@@ -1,7 +1,17 @@
 {
   "title.prefix":"Frontend",
 
+  "common.login":"Login",
+  "common.logOut":"Log Out",
+
   "common.action":"Action",
+  "common.save":"Save",
+  "common.edit":"Edit",
+  "common.preview":"Preview",
+  "common.next":"Next",
+  "common.cancel":"Cancel",
+  "common.Approve":"Approve",
+  "common.language":"Language",
 
   "page.user.suffix":"User List",
   "page.role.suffix":"Role List",
@@ -11,6 +21,17 @@
   "user.uesrId": "ID",
   "user.loginName":"Login Name",
   "user.realName":"Real Name",
-  "user.email":"Email"
+  "user.email":"Email",
+  "language.english":"English",
+  "language.chinese":"Chinese",
+
+  "menu.name":"Name",
+  "menu.code":"Code",
+  "menu.parentName":"Parent Name",
+  "menu.url": "URL",
+  "menu.perms":"Perms",
+  "menu.type":"Type",
+  "menu.icon":"Icon",
+  "menu.orderNumber":"Order number"
 
 }

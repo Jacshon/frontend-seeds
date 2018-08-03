@@ -8,14 +8,14 @@
             $translate.use(langKey);
             window.localStorage.lang=langKey;
             applicationSettings.getSettings().language = langKey;
-            translationService.changeLocale(langKey).then(
-                function(data) {
-                    $rootScope.$broadcast('languageChanged');
-                },
-                function(error) {
-                    console.log("error while changing locale");
-                }
-            );
+            // translationService.changeLocale(langKey).then(
+            //     function(data) {
+            //         $rootScope.$broadcast('languageChanged');
+            //     },
+            //     function(error) {
+            //         console.log("error while changing locale");
+            //     }
+            // );
         };
     }
 })();

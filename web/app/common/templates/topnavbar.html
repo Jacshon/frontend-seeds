@@ -9,9 +9,18 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
+            <li uib-dropdown>
+                <a class="count-info" href uib-dropdown-toggle>
+                    {{'common.language' | translate}}
+                </a>
+                <ul uib-dropdown-menu class="animated fadeInRight m-t-xs" ng-controller="translateCtrl">
+                    <li><a ng-click="main.changeLanguage('en_US')">{{'language.english' | translate}}</a></li>
+                    <li><a ng-click="changeLanguage('zh_CN')">{{'language.chinese' | translate}}</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="">
-                    <i class="fa fa-sign-out"></i> Log out
+                    <i class="fa fa-sign-out"></i> {{'common.logOut' | translate}}
                 </a>
             </li>
         </ul>

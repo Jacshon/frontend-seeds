@@ -8,14 +8,15 @@
  */
 (function () {
     angular.module('inspinia').controller('MainCtrl', MainCtrl);
-    MainCtrl.$inject = ['$ocLazyLoad', '$state', '$window', '$scope', 'authorizationService', 'applicationSettings', 'translationService', '$rootScope'];
-    function MainCtrl($ocLazyLoad, $state, $window, $scope, authorizationService, applicationSettings, translationService, $rootScope) {
+    MainCtrl.$inject = ['$ocLazyLoad', '$state', '$window', '$scope', 'authorizationService', 'applicationSettings', '$translate', '$rootScope'];
+    function MainCtrl($ocLazyLoad, $state, $window, $scope, authorizationService, applicationSettings, $translate, $rootScope) {
         var vm = this;
         vm.userName = 'Example user';
         vm.helloText = 'Welcome in SeedProject';
         vm.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
         vm.navigate = navigate;
         vm.changeTheme = changeTheme;
+        vm.changeLanguage = changeLanguage;
         vm.theme = "default";
 
         $scope.$on('ocLazyLoad.fileLoaded', function(e, module) {
@@ -26,17 +27,11 @@
             console.log('module loaded', module);
         });
 
-        var defaultLanguage = window.localStorage.lang || 'en_US';
-        applicationSettings.getSettings().language = defaultLanguage;
-
-        translationService.changeLocale(defaultLanguage).then(
-            function(data) {
-                $rootScope.$broadcast('languageChanged');
-            },
-            function(error) {
-                console.log("error while changing locale");
-            }
-        );
+        function changeLanguage(langKey) {
+            $translate.use(langKey);
+            window.localStorage.lang=langKey;
+            applicationSettings.getSettings().language = langKey;
+        };
 
         function navigate(moduleName, status) {
             $scope.testSearchStatus = null;

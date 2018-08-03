@@ -1,7 +1,17 @@
 {
   "title.suffix":"后台管理系统",
 
+  "common.login":"登录",
+  "common.logOut":"退出",
+
   "common.action":"操作",
+  "common.save":"保存",
+  "common.edit":"编辑",
+  "common.preview":"后退",
+  "common.next":"前进",
+  "common.cancel":"取消",
+  "common.Approve":"审核",
+  "common.language":"语言",
 
   "page.user.suffix":"用户列表",
   "page.role.suffix":"角色列表",
@@ -11,5 +21,16 @@
   "user.uesrId": "ID",
   "user.loginName":"登录名",
   "user.realName":"真实姓名",
-  "user.email":"邮箱地址"
+  "user.email":"邮箱地址",
+  "language.english":"英文",
+  "language.chinese":"中文",
+
+  "menu.name":"名称",
+  "menu.code":"模块码值",
+  "menu.parentName":"父名称",
+  "menu.url": "URL",
+  "menu.perms":"权限",
+  "menu.type":"类型",
+  "menu.icon":"图标",
+  "menu.orderNumber":"排序值"
 }

@@ -14,7 +14,7 @@
             $rootScope.$state = $state;
         })
 
-    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+    function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $translateProvider) {
         setURLS();
         $urlRouterProvider.otherwise("/index/main");
 
@@ -50,6 +50,14 @@
                 templateUrl: "app/privilege/privilege.html",
                 data: {pageTitle: 'Example Privilege'}
             })
+
+        var defaultLanguage = window.localStorage.lang || 'en_US';
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'languages/',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage(defaultLanguage);
+        $translateProvider.fallbackLanguage(defaultLanguage);
 
         function setURLS() {
             urls = {
