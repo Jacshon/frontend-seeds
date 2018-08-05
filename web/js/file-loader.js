@@ -32,6 +32,14 @@ var InspiniaFileLoader = (function() {
                 'app/menu/menu.service.js',
                 'app/menu/menu.ctrl.js'
             ];
+        },
+        'app.forgetPassword': function() {
+            return [
+                'app/forgetPassword/forgetPassword.module.js',
+                'app/forgetPassword/forgetPassword.config.js',
+                'app/forgetPassword/forgetPassword.service.js',
+                'app/forgetPassword/forgetPassword.ctrl.js'
+            ];
         }
     };
 

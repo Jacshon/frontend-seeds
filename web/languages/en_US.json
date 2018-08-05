@@ -6,6 +6,7 @@
 
   "common.action":"Action",
   "common.save":"Save",
+  "common.close":"Close",
   "common.edit":"Edit",
   "common.preview":"Preview",
   "common.next":"Next",
@@ -32,6 +33,9 @@
   "menu.perms":"Perms",
   "menu.type":"Type",
   "menu.icon":"Icon",
-  "menu.orderNumber":"Order number"
+  "menu.orderNumber":"Order number",
+
+  "role.roleName":"Role Name",
+  "role.remark":"Remark"
 
 }

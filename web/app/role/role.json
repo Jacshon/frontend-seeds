@@ -1,0 +1,33 @@
+{
+  "data":[
+    {
+      "roleId":1,
+      "roleName":"用户管理",
+      "remark":"用户管理"
+    },
+    {
+      "roleId":2,
+      "roleName":"菜单管理",
+      "remark":"菜单管理"
+    },
+    {
+      "roleId":3,
+      "roleName":"角色管理",
+      "remark":"角色管理"
+    },
+    {
+      "roleId":4,
+      "roleName":"权限管理",
+      "remark":"权限管理"
+    },
+    {
+      "roleId":5,
+      "roleName":"日志管理",
+      "remark":"日志管理"
+    }
+  ],
+  "startRow": 0,
+  "recordsFiltered": 5,
+  "recordsTotal": 5,
+  "status": "SUCCESS"
+}

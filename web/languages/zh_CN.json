@@ -6,6 +6,7 @@
 
   "common.action":"操作",
   "common.save":"保存",
+  "common.close":"关闭",
   "common.edit":"编辑",
   "common.preview":"后退",
   "common.next":"前进",
@@ -32,5 +33,8 @@
   "menu.perms":"权限",
   "menu.type":"类型",
   "menu.icon":"图标",
-  "menu.orderNumber":"排序值"
+  "menu.orderNumber":"排序值",
+
+  "role.roleName":"角色名称",
+  "role.remark":"角色说明"
 }
