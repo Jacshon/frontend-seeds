@@ -22,13 +22,13 @@
             .withOption("order", [0, 'desc']);
 
         vm.tableDTColumns = [
-            DTColumnBuilder.newColumn('testId'),
-            DTColumnBuilder.newColumn('name').withOption("name", "name"),
-            DTColumnBuilder.newColumn('gender').withOption("name", "gender"),
-            DTColumnBuilder.newColumn('icType').withOption("name", "icType").notSortable(),
-            DTColumnBuilder.newColumn('icNumber').withOption("name", "icNumber").notSortable(),
-            DTColumnBuilder.newColumn('birthDay').withOption("name", "birthDay").notSortable(),
-            DTColumnBuilder.newColumn('mobileNumber').withOption("name", "mobileNumber").notSortable(),
+            DTColumnBuilder.newColumn('userId'),
+            DTColumnBuilder.newColumn('username').withOption("name", "username"),
+            DTColumnBuilder.newColumn('email').withOption("name", "email"),
+            DTColumnBuilder.newColumn('mobile').withOption("name", "mobile").notSortable(),
+            DTColumnBuilder.newColumn('status').withOption("name", "status").notSortable(),
+            DTColumnBuilder.newColumn('createUser').withOption("name", "createUser").notSortable(),
+            DTColumnBuilder.newColumn('createTime').withOption("name", "createTime").notSortable(),
             DTColumnBuilder.newColumn('action').notSortable()
         ];
 

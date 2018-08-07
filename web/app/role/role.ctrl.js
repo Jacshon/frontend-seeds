@@ -93,16 +93,96 @@
         function generateButtons(tableDTOptions) {
             var creteRole = "<span class='btn btn-primary' >"+ "增加角色" +"</span>";
             var buttons = [];
-            buttons = [{
-                text: creteRole,
-                key: '1',
-                action: onClickCreateRole
-            }];
+            // buttons = [{
+            //     text: creteRole,
+            //     key: '1',
+            //     action: onClickCreateRole
+            // }];
             tableDTOptions.withButtons(buttons);
         }
 
         function onClickCreateRole() {
             openRoleDetailsPopup(Constants.getActions().ADD, {});
+        }
+
+
+        vm.treeConfig = {
+            core : {
+                multiple : true,
+                animation: false,
+                error : function(error) {
+                    $log.error('treeCtrl: error from js tree - ' + angular.toJson(error));
+                },
+                check_callback : true,
+                worker : true
+            },
+            'plugins' : [ 'types', 'dnd','checkbox' ],
+            'types' : {
+                'default' : {
+                    'icon' : 'fa fa-folder'
+                },
+                'menu' : {
+                    'icon' : 'fa fa-file-code-o'
+                },
+                'operate' : {
+                    'icon' : 'fa fa-file-picture-o'
+                }
+            }
+        };
+
+        vm.treeData = [
+            {
+                "id": "1",
+                "parent": "#",
+                "text": "Sys Management",
+                "state": {
+                    "opened": true
+                },
+                "__uiNodeId": 1
+            }, {
+                "id": "2",
+                "parent": "1",
+                "text": "User Management",
+                "state": {
+                    "opened": true,
+                    "selected":true
+                },
+                "type":"menu",
+                "__uiNodeId": 2
+            }, {
+                "id": "3",
+                "parent": "1",
+                "text": "Role Management",
+                "state": {
+                    "opened": true
+                },
+                "type": "menu",
+                "__uiNodeId": 3
+            },
+            {
+                "id": "4",
+                "parent": "1",
+                "text": "Privilege Management",
+                "state": {
+                    "opened": true,
+                    "selected":true
+                },
+                "type": "menu",
+                "__uiNodeId": 4
+            }
+        ]
+
+        vm.getSelectedPrivileges = getSelectedPrivileges;
+        
+        function getSelectedPrivileges() {
+            var selected_nodes = vm.treeInstance.jstree(true).get_checked(true);
+            console.log(selected_nodes);
+        }
+        
+        vm.save = save ;
+
+        function save() {
+            console.log(vm.treeData )
         }
     }
 

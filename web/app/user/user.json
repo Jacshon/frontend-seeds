@@ -1,84 +1,84 @@
 {
     "data": [{
-        "testId": 60,
-        "name": "Jhone Doe",
-        "gender": "Male",
-        "icType": "Identity Card",
-        "icNumber":"684157566",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "56536286"
+        "userId": 1,
+        "username": "Weijiang1",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 61,
-        "name": "John Roe",
-        "gender": "Male",
-        "icType": "Hospial Reference Number",
-        "icNumber":"456687868",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "64615617"
+        "userId": 2,
+        "username": "Weijiang2",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 62,
-        "name": "Jane Doe",
-        "gender": "Female",
-        "icType": "Driving License",
-        "icNumber":"969685867",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "958879898"
+        "userId": 3,
+        "username": "Weijiang3",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 63,
-        "name": "Janie Doe",
-        "gender": "Female",
-        "icType": "Identity Card",
-        "icNumber":"23434346",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "87687687"
+        "userId": 4,
+        "username": "Weijiang4",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 64,
-        "name": "John Smith",
-        "gender": "Male",
-        "icType": "Identity Card",
-        "icNumber": "234324324",
-        "birthDay": "03/08/1976",
-        "mobileNumber": "8797687665"
+        "userId": 5,
+        "username": "Weijiang5",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 65,
-        "name": "Richard Roe",
-        "gender": "Male",
-        "icType": "Passport",
-        "icNumber":"N234344",
-        "birthDay": "03/08/1976",
-        "mobileNumber": "9868756765"
+        "userId": 6,
+        "username": "Weijiang6",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 66,
-        "name": "Joe Bloggs",
-        "gender": "Male",
-        "icType": "Hospial Reference Number",
-        "icNumber":"13231123",
-        "birthDay": "03/08/1976",
-        "mobileNumber": "86858658"
+        "userId": 7,
+        "username": "Weijiang7",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 67,
-        "name": "Baby Doe",
-        "gender": "Male",
-        "icType": "Hospial Reference Number",
-        "icNumber":"N12323",
-        "birthDay": "03/08/1976",
-        "mobileNumber": "865746546"
+        "userId": 8,
+        "username": "Weijiang8",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     },{
-        "testId": 68,
-        "name": "Jhone Doe",
-        "gender": "Male",
-        "icType": "Identity Card",
-        "icNumber":"684157566",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "56536286"
+        "userId": 9,
+        "username": "Weijiang9",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }, {
-        "testId": 69,
-        "name": "John Roe",
-        "gender": "Male",
-        "icType": "Hospial Reference Number",
-        "icNumber":"456687868",
-        "birthDay": "14/07/1976",
-        "mobileNumber": "64615617"
+        "userId": 10,
+        "username": "Weijiang10",
+        "email": "weijiang.wang@email.cn",
+        "mobile":"684157566",
+        "status": "Active",
+        "createUser":"Admin",
+        "createTime":"2018-08-07"
     }],
     "startRow": 0,
     "recordsFiltered": 16,

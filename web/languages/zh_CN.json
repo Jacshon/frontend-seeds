@@ -13,6 +13,7 @@
   "common.cancel":"取消",
   "common.Approve":"审核",
   "common.language":"语言",
+  "common.home":"首页",
 
   "page.user.suffix":"用户列表",
   "page.role.suffix":"角色列表",
@@ -20,11 +21,14 @@
 
   "user.title":"用户信息",
   "user.uesrId": "ID",
-  "user.loginName":"登录名",
-  "user.realName":"真实姓名",
+  "user.username":"用户名",
   "user.email":"邮箱地址",
   "language.english":"英文",
   "language.chinese":"中文",
+  "user.status":"状态",
+  "user.mobile":"手机号",
+  "user.createUser":"创建人",
+  "user.createTime":"创建时间",
 
   "menu.name":"名称",
   "menu.code":"模块码值",
