@@ -8,14 +8,9 @@
             debug: false
         });
 
-        $stateProvider.state('user', {
+        $stateProvider
+            .state('sys.user', {
             url: "/user",
-            templateUrl: "app/common/templates/content.html",
-            data: {
-                pageTitle: 'User'
-            }
-        }).state('user.list', {
-            url: "/list",
             templateUrl: "app/user/user.html",
             data: {pageTitle: 'Example User'},
             resolve: {

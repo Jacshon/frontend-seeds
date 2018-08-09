@@ -8,7 +8,7 @@
             debug: false
         });
 
-        $stateProvider.state('forgetPassword', {
+        $stateProvider.state('sys.forgetPassword', {
             url: "/forgetPassword",
             templateUrl: "app/common/templates/content.html",
             data: {
@@ -23,21 +23,21 @@
                     ]);
                 }
             }
-        }).state('forgetPassword.wizard', {
+        }).state('sys.forgetPassword.wizard', {
             url: "/wizard",
             templateUrl: "app/forgetPassword/forgetPassword.html",
             data: {pageTitle: 'Forget Password'},
             resolve: {
             }
-        }).state('forgetPassword.wizard.step_one', {
+        }).state('sys.forgetPassword.wizard.step_one', {
             url: "/step_one",
             templateUrl: "app/forgetPassword/step_one.html",
             data: {pageTitle: 'Step one'},
-        }).state('forgetPassword.wizard.step_two', {
+        }).state('sys.forgetPassword.wizard.step_two', {
             url: "/step_two",
             templateUrl: "app/forgetPassword/step_two.html",
             data: {pageTitle: 'Step two'},
-        }).state('forgetPassword.wizard.step_three', {
+        }).state('sys.forgetPassword.wizard.step_three', {
             url: "/step_three",
             templateUrl: "app/forgetPassword/step_three.html",
             data: {pageTitle: 'Step three'},

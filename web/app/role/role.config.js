@@ -14,13 +14,6 @@
         });
 
         $stateProvider
-        //     .state('app', {
-        //     url: "/app",
-        //     templateUrl: "app/common/templates/content.html",
-        //     data: {
-        //         pageTitle: 'Role'
-        //     }
-        // })
             .state('sys.role', {
             url: "/role",
             templateUrl: "app/role/role.html",

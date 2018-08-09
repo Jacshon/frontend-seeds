@@ -47,6 +47,59 @@
             });
         }
 
+        vm.accessMenuList = [
+            {
+                "moduleId":1,
+                "moduleName":"权限管理",
+                "moduleCode":"sys",
+                "moduleState":"sys",
+                "icon":"fa fa-user",
+                "type":"0",
+                "childList":[
+                    {
+                        "moduleId":2,
+                        "moduleName":"用户管理",
+                        "moduleCode":"app.user",
+                        "moduleState":"sys.user",
+                        "icon":"fa fa-user",
+                        "type":"0"
+                    },
+                    {
+                        "moduleId":3,
+                        "moduleName":"角色管理",
+                        "moduleCode":"app.role",
+                        "moduleState":"sys.role",
+                        "icon":"fa fa-user",
+                        "type":"0"
+                    },
+                    {
+                        "moduleId":4,
+                        "moduleName":"权限管理",
+                        "moduleCode":"app.privilege",
+                        "moduleState":"sys.privilege",
+                        "icon":"fa fa-user",
+                        "type":"0"
+                    },
+                    {
+                        "moduleId":5,
+                        "moduleName":"菜单管理",
+                        "moduleCode":"app.menu",
+                        "moduleState":"sys.menu",
+                        "icon":"fa fa-user",
+                        "type":"0"
+                    },
+                    {
+                        "moduleId":6,
+                        "moduleName":"模块管理",
+                        "moduleCode":"app.module",
+                        "moduleState":"sys.module",
+                        "icon":"fa fa-user",
+                        "type":"0"
+                    }
+                ]
+            }
+        ]
+
         function changeTheme(theme) {
             vm.theme = theme;
         }

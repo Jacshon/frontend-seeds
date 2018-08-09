@@ -8,14 +8,9 @@
             debug: false
         });
 
-        $stateProvider.state('menu', {
+        $stateProvider
+            .state('sys.menu', {
             url: "/menu",
-            templateUrl: "app/common/templates/content.html",
-            data: {
-                pageTitle: 'Menu'
-            }
-        }).state('menu.list', {
-            url: "/list",
             templateUrl: "app/menu/menu.html",
             data: {pageTitle: 'Menu'},
             resolve: {
