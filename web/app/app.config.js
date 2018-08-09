@@ -40,16 +40,17 @@
                 templateUrl: "app/minor/minor.html",
                 data: {pageTitle: 'Example view'}
             })
-            .state('index.role', {
-                url: "/role",
-                templateUrl: "app/role/role.html",
-                data: {pageTitle: 'Example Role'}
-            })
             .state('index.privilege', {
                 url: "/privilege",
                 templateUrl: "app/privilege/privilege.html",
-                data: {pageTitle: 'Example Privilege'}
+                data: {pageTitle: 'Example view'}
             })
+            .state('sys', {
+                url: "/sys",
+                templateUrl: "app/common/templates/content.html",
+                data: {pageTitle: 'Sys'}
+            })
+
 
         var defaultLanguage = window.localStorage.lang || 'en_US';
         $translateProvider.useStaticFilesLoader({

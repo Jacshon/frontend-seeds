@@ -28,7 +28,6 @@
             <li ui-sref-active="active">
                 <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
             </li>
-
             <li ui-sref-active="active">
                 <a ui-sref="index.privilege"><i class="fa fa-desktop"></i> <span class="nav-label">Privilege page</span></a>
             </li>
@@ -44,8 +43,8 @@
                     <span class="nav-label">Menu</span>
                 </a>
             </li>
-            <li ng-class="{active: $state.includes('role.list')}">
-                <a ng-click="main.navigate('app.role', 'role.list')">
+            <li ng-class="{active: $state.includes('sys.role')}">
+                <a ng-click="main.navigate('app.role', 'sys.role')">
                     <i class="fa fa-list-alt"></i>
                     <span class="nav-label">Role</span>
                 </a>
@@ -55,6 +54,47 @@
                     <i class="fa fa-list-alt"></i>
                     <span class="nav-label">Forget Password</span>
                 </a>
+            </li>
+            <li ng-class="{active: $state.includes('sys.module')}">
+                <a ng-click="main.navigate('app.module', 'sys.module')">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="nav-label">Module</span>
+                </a>
+            </li>
+            <li ng-class="{active: $state.includes('sys')}">
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">{{ 'SYS' | translate }}</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('sys')}">
+                    <li ng-class="{active: $state.includes('sys.user')}">
+                        <a ng-click="main.navigate('app.user', 'sys.user')">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">User</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active: $state.includes('sys.role')}">
+                        <a ng-click="main.navigate('app.role', 'sys.role')">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">Role</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active: $state.includes('sys.menu')}">
+                        <a ng-click="main.navigate('app.menu', 'sys.menu')">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">Menu</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active: $state.includes('sys.module')}">
+                        <a ng-click="main.navigate('app.module', 'sys.module')">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="nav-label">Module</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active: $state.includes('sys.forgetPassword')}">
+                        <a ng-click="main.navigate('app.forgetPassword', 'sys.forgetPassword.step_one')">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">Forget Password</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
 

@@ -1,0 +1,70 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Menu</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a>Sys</a>
+            </li>
+            <li class="active">
+                <strong>Module</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="ModuleController as moduleCtrl">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Module List</h5>
+                </div>
+                <div class="ibox-content">
+                    <li ng-class="{active: $state.includes('sys')}">
+                        <i class="fa fa-user"></i> <span class="nav-label">{{ 'SYS' | translate }}</span><span class="fa arrow"></span>
+                        <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('sys')}">
+                            <li ng-class="{active: $state.includes('sys.user')}">
+                                <a ng-click="main.navigate('sys.user')">
+                                    <i class="fa fa-user"></i>
+                                    <span class="nav-label">User</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $state.includes('sys.role')}">
+                                <a ng-click="">
+                                    <i class="fa fa-user"></i>
+                                    <span class="nav-label">Role</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $state.includes('sys.menu')}">
+                                <a ng-click="">
+                                    <i class="fa fa-user"></i>
+                                    <span class="nav-label">Menu</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: $state.includes('sys.forgetPassword')}">
+                                <i class="fa fa-user"></i>
+                                <span class="nav-label">Forget Password</span>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Table with data from $scope - <strong>(The angular way)</strong></h5>
+
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

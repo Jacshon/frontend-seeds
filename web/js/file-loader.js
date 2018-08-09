@@ -33,6 +33,14 @@ var InspiniaFileLoader = (function() {
                 'app/menu/menu.ctrl.js'
             ];
         },
+        'app.module': function() {
+            return [
+                'app/module/module.module.js',
+                'app/module/module.config.js',
+                'app/module/module.service.js',
+                'app/module/module.ctrl.js'
+            ];
+        },
         'app.forgetPassword': function() {
             return [
                 'app/forgetPassword/forgetPassword.module.js',

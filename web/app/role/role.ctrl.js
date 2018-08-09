@@ -14,6 +14,7 @@
         vm.tableDTOptions = DataTableSettings.buildDefaultTable(DTOptionsBuilder)
             .withOption('initComplete', onTableCreationCompleted)
             .withOption('sDom', '<"top"><"html5buttons"B>rt<"information"i><"bottom"lp>')//sDom选项灵活配置各个特性的位置
+            .withButtons([])
             .withOption('ajax', {
                 url: 'app/role/role.json',
                 type: 'POST',
@@ -88,34 +89,12 @@
                 });
             }
         }
-        generateButtons(vm.tableDTOptions);
-
-        function generateButtons(tableDTOptions) {
-            var creteRole = "<span class='btn btn-primary' >"+ "增加角色" +"</span>";
-            var buttons = [];
-            // buttons = [{
-            //     text: creteRole,
-            //     key: '1',
-            //     action: onClickCreateRole
-            // }];
-            tableDTOptions.withButtons(buttons);
-        }
 
         function onClickCreateRole() {
             openRoleDetailsPopup(Constants.getActions().ADD, {});
         }
 
-
         vm.treeConfig = {
-            core : {
-                multiple : true,
-                animation: false,
-                error : function(error) {
-                    $log.error('treeCtrl: error from js tree - ' + angular.toJson(error));
-                },
-                check_callback : true,
-                worker : true
-            },
             'plugins' : [ 'types', 'dnd','checkbox' ],
             'types' : {
                 'default' : {
@@ -127,6 +106,9 @@
                 'operate' : {
                     'icon' : 'fa fa-file-picture-o'
                 }
+            },
+            'checkbox' : {
+                "tie_selection " : false
             }
         };
 
@@ -173,15 +155,17 @@
         ]
 
         vm.getSelectedPrivileges = getSelectedPrivileges;
-        
         function getSelectedPrivileges() {
-            var selected_nodes = vm.treeInstance.jstree(true).get_checked(true);
+            var selected_nodes = $scope.treeInstance.jstree(true).get_selected();
             console.log(selected_nodes);
         }
         
         vm.save = save ;
 
         function save() {
+            console.log(vm.treeData);
+            var selected_nodes = vm.treeInstance.jstree(true).get_selected();
+            console.log(selected_nodes);
             console.log(vm.treeData )
         }
     }

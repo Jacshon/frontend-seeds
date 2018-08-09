@@ -1,10 +1,5 @@
-/**
- * Created by wangwjw
- * Date: 2018/7/30.
- * Version : v1.0.0
- */
 (function () {
-    angular.module('app.role').config(configure);
+    angular.module('app.module').config(configure);
     configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
     setURLS();
 
@@ -14,17 +9,10 @@
         });
 
         $stateProvider
-        //     .state('app', {
-        //     url: "/app",
-        //     templateUrl: "app/common/templates/content.html",
-        //     data: {
-        //         pageTitle: 'Role'
-        //     }
-        // })
-            .state('sys.role', {
-            url: "/role",
-            templateUrl: "app/role/role.html",
-            data: {pageTitle: 'Example Role'},
+            .state('sys.module', {
+            url: "/module",
+            templateUrl: "app/module/module.html",
+            data: {pageTitle: 'Module'},
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
@@ -52,6 +40,6 @@
         urls = {
 
         };
-        InspiniaURLs.setURLS('app.role', urls);
+        InspiniaURLs.setURLS('app.menu', urls);
     }
 })();
