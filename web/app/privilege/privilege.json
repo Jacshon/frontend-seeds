@@ -1,0 +1,58 @@
+{
+  "data":[
+    {
+      "privilegeId":1,
+      "code":"user:list",
+      "name":"进入用户管理页面",
+      "moduleId":"2",
+      "perms":"sys:user:list",
+      "status":"1",
+      "priority":"0",
+      "remark":""
+    },
+    {
+      "privilegeId":2,
+      "code":"user:info",
+      "name":"查看用户明细",
+      "moduleId":"2",
+      "perms":"sys:user:info",
+      "status":"1",
+      "priority":"1",
+      "remark":""
+    },
+    {
+      "privilegeId":3,
+      "code":"user:add",
+      "name":"增加用户",
+      "moduleId":"2",
+      "perms":"sys:user:add",
+      "status":"1",
+      "priority":"2",
+      "remark":""
+    },
+    {
+      "privilegeId":4,
+      "code":"user:edit",
+      "name":"修改用户信息",
+      "moduleId":"2",
+      "perms":"sys:user:edit",
+      "status":"1",
+      "priority":"3",
+      "remark":""
+    },
+    {
+      "privilegeId":5,
+      "code":"user:delete",
+      "name":"删除用户",
+      "moduleId":"2",
+      "perms":"sys:user:delete",
+      "status":"1",
+      "priority":"4",
+      "remark":""
+    }
+  ],
+  "startRow": 0,
+  "recordsFiltered": 5,
+  "recordsTotal": 5,
+  "status": "SUCCESS"
+}

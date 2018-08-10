@@ -41,6 +41,14 @@ var InspiniaFileLoader = (function() {
                 'app/module/module.ctrl.js'
             ];
         },
+        'app.privilege': function() {
+            return [
+                'app/privilege/privilege.module.js',
+                'app/privilege/privilege.config.js',
+                'app/privilege/privilege.service.js',
+                'app/privilege/privilege.ctrl.js'
+            ];
+        },
         'app.forgetPassword': function() {
             return [
                 'app/forgetPassword/forgetPassword.module.js',

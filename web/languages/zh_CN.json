@@ -39,11 +39,18 @@
   "menu.name":"名称",
   "menu.code":"模块码值",
   "menu.parentName":"上级名称",
-  "menu.url": "URL",
+  "menu.state": "路由",
   "menu.perms":"权限",
   "menu.type":"类型",
   "menu.icon":"图标",
   "menu.orderNumber":"排序值",
+
+  "privilege.name":"权限名称",
+  "privilege.moduleName":"所属模块",
+  "privilege.perms":"权限值",
+  "privilege.status":"状态",
+  "privilege.priority":"优先级",
+  "privilege.remark":"说明",
 
   "role.roleName":"角色名称",
   "role.remark":"角色说明"

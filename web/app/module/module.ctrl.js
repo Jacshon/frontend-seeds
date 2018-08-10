@@ -5,6 +5,8 @@
     
     function ModuleController($scope, DTOptionsBuilder, DTColumnBuilder, DataTableSettings, $uibModal) {
         var vm = this;
+        vm.showPrivileges = true;
+        vm.openModuleDetailsPopup = openModuleDetailsPopup;
         vm.tableDTOptions = DataTableSettings.buildDefaultTable(DTOptionsBuilder)
             .withOption('initComplete', onTableCreationCompleted)
             .withButtons([])
@@ -23,10 +25,10 @@
             DTColumnBuilder.newColumn('menuId'),
             DTColumnBuilder.newColumn('name').withOption("name", "name"),
             DTColumnBuilder.newColumn('parentName').withOption("name", "parentName"),
-            DTColumnBuilder.newColumn('url').withOption("name", "url").notSortable(),
+            DTColumnBuilder.newColumn('code').withOption("name", "code").notSortable(),
+            DTColumnBuilder.newColumn('state').withOption("name", "state").notSortable(),
             DTColumnBuilder.newColumn('type').withOption("name", "type").notSortable(),
             DTColumnBuilder.newColumn('icon').withOption("name", "icon").notSortable(),
-            DTColumnBuilder.newColumn('orderNumber').withOption("name", "orderNumber").notSortable(),
             DTColumnBuilder.newColumn('action').notSortable()
         ];
 
@@ -45,10 +47,62 @@
             return content;
         }
 
+        // vm.privilegeList = [
+        //     {
+        //         "privilegeId":1,
+        //         "code":"user:list",
+        //         "name":"进入用户管理页面",
+        //         "moduleId":"2",
+        //         "perms":"sys:user:list",
+        //         "status":"1",
+        //         "priority":"0",
+        //         "remark":""
+        //     },
+        //     {
+        //         "privilegeId":2,
+        //         "code":"user:info",
+        //         "name":"查看用户明细",
+        //         "moduleId":"2",
+        //         "perms":"sys:user:info",
+        //         "status":"1",
+        //         "priority":"1",
+        //         "remark":""
+        //     },
+        //     {
+        //         "privilegeId":3,
+        //         "code":"user:add",
+        //         "name":"增加用户",
+        //         "moduleId":"2",
+        //         "perms":"sys:user:add",
+        //         "status":"1",
+        //         "priority":"2",
+        //         "remark":""
+        //     },
+        //     {
+        //         "privilegeId":4,
+        //         "code":"user:edit",
+        //         "name":"修改用户信息",
+        //         "moduleId":"2",
+        //         "perms":"sys:user:edit",
+        //         "status":"1",
+        //         "priority":"3",
+        //         "remark":""
+        //     },
+        //     {
+        //         "privilegeId":5,
+        //         "code":"user:delete",
+        //         "name":"删除用户",
+        //         "moduleId":"2",
+        //         "perms":"sys:user:delete",
+        //         "status":"1",
+        //         "priority":"4",
+        //         "remark":""
+        //     }
+        // ];
+
         function configureColumnActions() {
             EventManager.addEvent($scope, 'click', clickView, $('#moduleTable tbody'), '.fa-eye');
             EventManager.addEvent($scope, 'click', clickEdit, $('#moduleTable tbody'), '.fa-edit');
-
             function clickEdit() {
                 var tr = $(this).closest('tr');
                 var row = vm.tableDTInstance.DataTable.row(tr);
@@ -78,7 +132,7 @@
                     controllerAs: 'moduleDetailsPopupCtrl',
                     resolve: {
                         transferObject: function() {
-                            return new TransferObject(data, action, function(user) {
+                            return new TransferObject(data, action, function(module) {
                                 vm.tableDTInstance.DataTable.ajax.reload();
                             });
                         }

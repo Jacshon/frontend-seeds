@@ -2,7 +2,7 @@
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>{{"user.details"| translate}}</h5>
-            <div ibox-tools on-close="menuDetailsPopupCtrl.cancel()"></div>
+            <div ibox-tools on-close="moduleDetailsPopupCtrl.cancel()"></div>
         </div>
         <div class="ibox-content">
             <form role="form" name="menuForm" validate-on-server>
@@ -11,16 +11,16 @@
                         <div class="form-group">
                             <label class="font-noraml">Menu ID</label>
                             <input type="text" name="menuId"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.menuId"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.menuId"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                     <div class='col-md-6'>
                         <div class="form-group">
                             <label class="font-noraml">name</label>
                             <input type="text" name="name"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.name"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.name"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                 </div>
@@ -29,16 +29,16 @@
                         <div class="form-group">
                             <label class="font-noraml">Parent Menu</label>
                             <input type="text" name="parentId"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.parentId"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.parentId"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                     <div class='col-md-6'>
                         <div class="form-group">
                             <label class="font-noraml">Menu Type</label>
                             <input type="text" name="type"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.type"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.type"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                 </div>
@@ -47,16 +47,16 @@
                         <div class="form-group">
                             <label class="font-noraml">Menu Icon</label>
                             <input type="text" name="icon"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.icon"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.icon"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                     <div class='col-md-6'>
                         <div class="form-group">
                             <label class="font-noraml">Menu Url</label>
                             <input type="text" name="type"
-                                   class="form-control" data-ng-model="menuDetailsPopupCtrl.menu.url"
-                                   ng-disabled="menuDetailsPopupCtrl.readOnly">
+                                   class="form-control" data-ng-model="moduleDetailsPopupCtrl.menu.url"
+                                   ng-disabled="moduleDetailsPopupCtrl.readOnly">
                         </div>
                     </div>
                 </div>
@@ -64,11 +64,11 @@
             </form>
             <div class="footer">
                 <button type="submit" class="btn btn-primary"
-                        ng-click="menuDetailsPopupCtrl.saveUser(menuDetailsPopupCtrl.user)"
-                        ng-show="!menuDetailsPopupCtrl.readOnly">
+                        ng-click="moduleDetailsPopupCtrl.saveUser(moduleDetailsPopupCtrl.module)"
+                        ng-show="!moduleDetailsPopupCtrl.readOnly">
                     {{'common.save' | translate}}
                 </button>
-                <button type="button" class="btn btn-primary" ng-click="menuDetailsPopupCtrl.cancel()">{{'common.close'
+                <button type="button" class="btn btn-primary" ng-click="moduleDetailsPopupCtrl.cancel()">{{'common.close'
                     | translate}}
                 </button>
             </div>

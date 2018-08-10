@@ -3,7 +3,8 @@
         "menuId": 1,
         "parentName": "",
         "name": "系统管理",
-        "url": "sys",
+        "code": "sys",
+        "state":"sys",
         "type": "目录",
         "icon": "fa fa-cog",
         "orderNumber":1
@@ -11,7 +12,8 @@
         "menuId": 2,
         "parentName": "系统管理",
         "name": "用户管理",
-        "url": "administration.user",
+        "code": "app.user",
+        "state":"sys.user",
         "type": "菜单",
         "icon": "fa fa-user",
         "orderNumber":1
@@ -19,7 +21,8 @@
         "menuId": 3,
         "parentName":"系统管理" ,
         "name": "角色管理",
-        "url": "administration.role",
+        "code": "app.role",
+        "state":"sys.role",
         "type": "菜单",
         "icon": "fa fa-user-secret",
         "orderNumber":2
@@ -27,7 +30,8 @@
         "menuId": 4,
         "parentName": "系统管理",
         "name": "权限管理",
-        "url": "administration.privilege",
+        "code": "app.privilege",
+        "state":"sys.privilege",
         "type": "菜单",
         "icon": "fa fa-th-list",
         "orderNumber":3
@@ -35,7 +39,8 @@
         "menuId": 5,
         "parentName": "系统管理",
         "name": "公共码值",
-        "url": "sys.commonCode",
+        "code": "app.commonCode",
+        "state":"sys.commonCode",
         "type": "菜单",
         "icon": "fa fa-sun-o",
         "orderNumber":4

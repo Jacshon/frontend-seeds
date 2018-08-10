@@ -40,11 +40,18 @@
   "menu.name":"Name",
   "menu.code":"Code",
   "menu.parentName":"Parent Name",
-  "menu.url": "URL",
+  "menu.state": "State",
   "menu.perms":"Perms",
   "menu.type":"Type",
   "menu.icon":"Icon",
   "menu.orderNumber":"Order number",
+
+  "privilege.name":"Name",
+  "privilege.moduleName":"Belongs to",
+  "privilege.perms":"Perms",
+  "privilege.status":"Status",
+  "privilege.priority":"Priority",
+  "privilege.remark":"Remark",
 
   "role.roleName":"Role Name",
   "role.remark":"Remark"
