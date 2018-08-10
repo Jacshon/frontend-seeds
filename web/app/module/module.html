@@ -19,39 +19,29 @@
 </div>
 <div class="wrapper wrapper-content animated fadeInRight" ng-controller="ModuleController as moduleCtrl">
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-8">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>Module List</h5>
                 </div>
                 <div class="ibox-content">
-                    <li ng-class="{active: $state.includes('sys')}">
-                        <i class="fa fa-user"></i> <span class="nav-label">{{ 'SYS' | translate }}</span><span class="fa arrow"></span>
-                        <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('sys')}">
-                            <li ng-class="{active: $state.includes('sys.user')}">
-                                <a ng-click="main.navigate('sys.user')">
-                                    <i class="fa fa-user"></i>
-                                    <span class="nav-label">User</span>
-                                </a>
-                            </li>
-                            <li ng-class="{active: $state.includes('sys.role')}">
-                                <a ng-click="">
-                                    <i class="fa fa-user"></i>
-                                    <span class="nav-label">Role</span>
-                                </a>
-                            </li>
-                            <li ng-class="{active: $state.includes('sys.menu')}">
-                                <a ng-click="">
-                                    <i class="fa fa-user"></i>
-                                    <span class="nav-label">Menu</span>
-                                </a>
-                            </li>
-                            <li ng-class="{active: $state.includes('sys.forgetPassword')}">
-                                <i class="fa fa-user"></i>
-                                <span class="nav-label">Forget Password</span>
-                            </li>
-                        </ul>
-                    </li>
+                    <table id="menuTable" datatable="" dt-options="moduleCtrl.tableDTOptions"
+                           dt-columns="moduleCtrl.tableDTColumns"
+                           dt-instance="moduleCtrl.tableDTInstance"
+                           class="table table-striped table-bordered table-hover dataTables-example responsive row-border hover">
+                        <thead>
+                        <tr>
+                            <th style="width:50px;">ID</th>
+                            <th style="width:200px;">{{"menu.name"| translate}}</th>
+                            <th style="width:100px;">{{"menu.parentName"| translate}}</th>
+                            <th style="width:200px;">{{"menu.url"| translate}}</th>
+                            <th style="width:150px;">{{"menu.type"| translate}}</th>
+                            <th style="width:200px;">{{"menu.icon"| translate}}</th>
+                            <th style="width:100px;">{{"menu.orderNumber" | translate}}</th>
+                            <th style="width:100px">Action</th>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
@@ -63,6 +53,7 @@
                     <div ibox-tools></div>
                 </div>
                 <div class="ibox-content">
+
                 </div>
             </div>
         </div>

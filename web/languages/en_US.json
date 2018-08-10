@@ -16,6 +16,12 @@
   "common.status":"Status",
   "common.home":"Home",
 
+  "app.user":"User",
+  "app.role":"Role",
+  "app.menu":"Menu",
+  "app.module":"Module",
+  "app.privilege":"Privilege",
+
   "page.user.suffix":"User List",
   "page.role.suffix":"Role List",
   "page.privilege.suffix":"Privilege List",

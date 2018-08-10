@@ -1,88 +1,47 @@
 {
     "data": [{
         "menuId": 1,
-        "parentId": 0,
+        "parentName": "",
         "name": "系统管理",
         "url": "sys",
-        "perms":"",
         "type": "目录",
         "icon": "fa fa-cog",
         "orderNumber":1
     }, {
         "menuId": 2,
-        "parentId": 1,
+        "parentName": "系统管理",
         "name": "用户管理",
         "url": "administration.user",
-        "perms":"",
         "type": "菜单",
         "icon": "fa fa-user",
         "orderNumber":1
     }, {
         "menuId": 3,
-        "parentId": 1,
+        "parentName":"系统管理" ,
         "name": "角色管理",
         "url": "administration.role",
-        "perms":"",
         "type": "菜单",
         "icon": "fa fa-user-secret",
         "orderNumber":2
     }, {
         "menuId": 4,
-        "parentId": 1,
+        "parentName": "系统管理",
         "name": "权限管理",
         "url": "administration.privilege",
-        "perms":"",
         "type": "菜单",
         "icon": "fa fa-th-list",
         "orderNumber":3
     }, {
         "menuId": 5,
-        "parentId": 1,
+        "parentName": "系统管理",
         "name": "公共码值",
         "url": "sys.commonCode",
-        "perms":"sys:config:list,sys:config:info,sys:config:save,sys:config:update,sys:config:delete",
         "type": "菜单",
         "icon": "fa fa-sun-o",
         "orderNumber":4
-    }, {
-        "menuId": 6,
-        "parentId": 2,
-        "name": "查看",
-        "url": "",
-        "perms":"administration.user.list,administration.user.info",
-        "type": "按钮",
-        "icon": "",
-        "orderNumber":1
-    }, {
-        "menuId": 7,
-        "parentId": 2,
-        "name": "新增",
-        "url": "",
-        "perms":"sys:user:save,sys:role:select",
-        "type": "按钮",
-        "icon": "",
-        "orderNumber":2
-    }, {
-        "menuId": 8,
-        "parentId": 2,
-        "name": "修改",
-        "url": "",
-        "perms":"sys:user:update,sys:role:select",
-        "type": "按钮",
-        "icon": "",
-        "orderNumber":2
-    },{
-        "menuId": 9,
-        "parentId": 2,
-        "name": "删除",
-        "url": "",
-        "perms":"sys:user:delete",
-        "type": "按钮",
-        "icon": "",
-        "orderNumber":2
     }],
     "startRow": 0,
-    "recordsFiltered": 9,
-    "recordsTotal": 9,
+    "recordsFiltered": 5,
+    "recordsTotal": 5,
     "status": "SUCCESS"
 }

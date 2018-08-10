@@ -15,6 +15,12 @@
   "common.language":"语言",
   "common.home":"首页",
 
+  "app.user":"用户管理",
+  "app.role":"角色管理",
+  "app.menu":"菜单管理",
+  "app.module":"模块管理",
+  "app.privilege":"权限管理",
+
   "page.user.suffix":"用户列表",
   "page.role.suffix":"角色列表",
   "page.privilege.suffix":"权限列表",
@@ -32,7 +38,7 @@
 
   "menu.name":"名称",
   "menu.code":"模块码值",
-  "menu.parentName":"父名称",
+  "menu.parentName":"上级名称",
   "menu.url": "URL",
   "menu.perms":"权限",
   "menu.type":"类型",

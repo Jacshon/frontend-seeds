@@ -11,7 +11,7 @@
     MainCtrl.$inject = ['$ocLazyLoad', '$state', '$window', '$scope', 'authorizationService', 'applicationSettings', '$translate', '$rootScope'];
     function MainCtrl($ocLazyLoad, $state, $window, $scope, authorizationService, applicationSettings, $translate, $rootScope) {
         var vm = this;
-        vm.userName = 'Example user';
+        vm.userName = 'Weijiang';
         vm.helloText = 'Welcome in SeedProject';
         vm.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
         vm.navigate = navigate;
@@ -50,49 +50,49 @@
         vm.accessMenuList = [
             {
                 "moduleId":1,
-                "moduleName":"权限管理",
-                "moduleCode":"sys",
-                "moduleState":"sys",
+                "name":"权限管理",
+                "code":"sys",
+                "state":"sys",
                 "icon":"fa fa-user",
                 "type":"0",
                 "childList":[
                     {
                         "moduleId":2,
-                        "moduleName":"用户管理",
-                        "moduleCode":"app.user",
-                        "moduleState":"sys.user",
+                        "name":"用户管理",
+                        "code":"app.user",
+                        "state":"sys.user",
                         "icon":"fa fa-user",
                         "type":"0"
                     },
                     {
                         "moduleId":3,
-                        "moduleName":"角色管理",
-                        "moduleCode":"app.role",
-                        "moduleState":"sys.role",
+                        "name":"角色管理",
+                        "code":"app.role",
+                        "state":"sys.role",
                         "icon":"fa fa-user",
                         "type":"0"
                     },
                     {
                         "moduleId":4,
-                        "moduleName":"权限管理",
-                        "moduleCode":"app.privilege",
-                        "moduleState":"sys.privilege",
+                        "name":"权限管理",
+                        "code":"app.privilege",
+                        "state":"sys.privilege",
                         "icon":"fa fa-user",
                         "type":"0"
                     },
                     {
                         "moduleId":5,
-                        "moduleName":"菜单管理",
-                        "moduleCode":"app.menu",
-                        "moduleState":"sys.menu",
+                        "name":"菜单管理",
+                        "code":"app.menu",
+                        "state":"sys.menu",
                         "icon":"fa fa-user",
                         "type":"0"
                     },
                     {
                         "moduleId":6,
-                        "moduleName":"模块管理",
-                        "moduleCode":"app.module",
-                        "moduleState":"sys.module",
+                        "name":"模块管理",
+                        "code":"app.module",
+                        "state":"sys.module",
                         "icon":"fa fa-user",
                         "type":"0"
                     }
