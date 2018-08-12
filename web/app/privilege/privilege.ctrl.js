@@ -25,7 +25,7 @@
             DTColumnBuilder.newColumn('name').withOption("name", "name"),
             DTColumnBuilder.newColumn('moduleName').withOption("name", "moduleName"),
             DTColumnBuilder.newColumn('perms').withOption("name", "perms").notSortable(),
-            DTColumnBuilder.newColumn('state').withOption("name", "state").notSortable(),
+            DTColumnBuilder.newColumn('status').withOption("name", "status").notSortable(),
             DTColumnBuilder.newColumn('action').notSortable()
         ];
 

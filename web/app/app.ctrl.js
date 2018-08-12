@@ -81,14 +81,6 @@
                         "type":"0"
                     },
                     {
-                        "moduleId":5,
-                        "name":"菜单管理",
-                        "code":"app.menu",
-                        "state":"sys.menu",
-                        "icon":"fa fa-user",
-                        "type":"0"
-                    },
-                    {
                         "moduleId":6,
                         "name":"模块管理",
                         "code":"app.module",

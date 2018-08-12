@@ -33,7 +33,7 @@
             </li>
 
             <li ng-repeat="module in main.accessMenuList" ng-class="{active: $state.includes(module.state)}">
-                <a href="#"><i class="{{module.icon}}"></i> <span class="nav-label">{{ module.code | translate }}</span><span class="fa arrow"></span></a>
+                <a href=""><i class="{{module.icon}}"></i> <span class="nav-label">{{ module.code | translate }}</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes(module.state)}">
                     <li ng-repeat="menu in module.childList" ng-class="{active: $state.includes(menu.state)}">
                         <a ng-click="main.navigate(menu.code, menu.state)">
@@ -41,6 +41,31 @@
                             <span class="nav-label">{{menu.code | translate}}</span>
                         </a>
                     </li>
+                </ul>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-sitemap"></i> <span class="nav-label">{{ 'MENULEVELS' | translate }}</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="">Third Level <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li><a href="">Second Level Item</a></li>
+                    <li>
+                        <a href="">Second Level Item</a></li>
+                    <li>
+                        <a href="">Second Level Item</a></li>
                 </ul>
             </li>
         </ul>
