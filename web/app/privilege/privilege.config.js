@@ -8,8 +8,7 @@
             debug: false
         });
 
-        $stateProvider
-            .state('sys.privilege', {
+        $stateProvider.state('sys.privilege', {
             url: "/privilege",
             templateUrl: "app/privilege/privilege.html",
             data: {pageTitle: 'Privilege'},

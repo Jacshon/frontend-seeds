@@ -1,0 +1,31 @@
+{
+    "data": [{
+        "deptId": 1,
+        "name": "研发部",
+        "parentDept": "",
+        "level":"0",
+        "priority": "0"
+    }, {
+        "deptId": 2,
+        "name": "软件研发部",
+        "parentDept": "研发部",
+        "level":"1",
+        "priority": "1"
+    }, {
+        "deptId": 3,
+        "name": "数据研发部",
+        "parentDept": "研发部",
+        "level":"1",
+        "priority": "2"
+    }, {
+        "deptId": 4,
+        "name": "实验研发部",
+        "parentDept": "研发部",
+        "level":"1",
+        "priority": "3"
+    }],
+    "startRow": 0,
+    "recordsFiltered": 4,
+    "recordsTotal": 4,
+    "status": "SUCCESS"
+}

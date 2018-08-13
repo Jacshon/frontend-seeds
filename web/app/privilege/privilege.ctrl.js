@@ -36,7 +36,7 @@
             configureColumnActions();
         }
 
-        DataTableSettings.applyCustomSettings(vm, '#moduleTable');
+        DataTableSettings.applyCustomSettings(vm, '#privilegeTable');
 
         function getActionColumnContent(data, type, full, meta) {
             var content = "<a class='icon'> <i class='fa fa-eye'></i></a> &nbsp";
@@ -45,8 +45,8 @@
         }
 
         function configureColumnActions() {
-            EventManager.addEvent($scope, 'click', clickView, $('#moduleTable tbody'), '.fa-eye');
-            EventManager.addEvent($scope, 'click', clickEdit, $('#moduleTable tbody'), '.fa-edit');
+            EventManager.addEvent($scope, 'click', clickView, $('#privilegeTable tbody'), '.fa-eye');
+            EventManager.addEvent($scope, 'click', clickEdit, $('#privilegeTable tbody'), '.fa-edit');
             function clickEdit() {
                 var tr = $(this).closest('tr');
                 var row = vm.tableDTInstance.DataTable.row(tr);
